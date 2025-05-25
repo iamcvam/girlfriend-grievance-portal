@@ -154,7 +154,7 @@ def send_email_to_user(grievance_id, response):
         except Exception as e:
             print(f"Error sending email: {e}")
 
-@app.route('/thankyou')
+@app.route('/thank_you')
 @login_required(USER_NAME)
 def thank_you():
     return render_template('thankyou.html', user_display_name=USER_NAME, admin_display_name=ADMIN_NAME)
