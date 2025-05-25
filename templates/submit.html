@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Grievance</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="submit-container">
+        <div class="submit-box">
+            <h2>Submit a Grievance 🥀</h2>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="flash-message">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <form method="POST">
+                <input type="text" name="title" placeholder="Title" required>
+                <textarea name="description" placeholder="What's bothering you?" required></textarea>
+                
+                <label for="mood">Mood:</label>
+                <select name="mood">
+                    <option>😘</option>
+                    <option>😢</option>
+                    <option>😡</option> 
+                    <option>🤬</option>                                      
+                    <option>🔪</option>
+                </select>
+
+                <label for="priority">Severity:</label>
+                <select name="priority">
+                    <option>A kiss can help 🤔</option>
+                    <option>A chunky kitkat would fix this 👺</option>
+                    <option>I hate you 👺👺</option>
+                    <option>I am going to beat you up 👺👺👺</option>
+                    <option>I will kill you 👺👺👺👺</option>
+                </select>
+
+                <button type="submit" class="btn">Submit 💌</button>
+            </form>
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="/my_grievances" class="btn">View My Grievances</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
